@@ -80,6 +80,8 @@ function fetchDataOpenMeteo(){
 }
 //Функция, реализующая сбор данных с заданным интервалом
 
+fetchDataOpenMeteo()
+
 let timerId = setInterval(() => fetchDataOpenMeteo(), 3600000);
 
 /*
