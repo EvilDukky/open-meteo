@@ -73,9 +73,9 @@ function dataRecording(link, requestedHour){
 }
 
 //Сбор данных за текущий час
-function fetchDataOpenMeteo(n){
+function fetchDataOpenMeteo(){
     var newTime = new Date().getHours();
-    newTime = newTime + n;
+    newTime = newTime + 3;
     dataRecording(apiLink, newTime);
 }
 //Функция, реализующая сбор данных с заданным интервалом
