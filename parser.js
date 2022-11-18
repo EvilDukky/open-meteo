@@ -7,11 +7,11 @@ const app = express();
 
 //Присвоение необходимых для подключения к бд конфигураций
 const client = new pg.Client({
-    user: 'postgres',
-    host: 'localhost',
+    user: 'hibiny_open_meteo',
+    host: '172.16.117.193',
     database: 'weather',
-    password: '11111',
-    port: 5433,
+    password: 'open',
+    port: 5632,
 });
 
 // //Подключение клиента бд
@@ -36,7 +36,7 @@ function dataRecording(link, requestedHour){
         .then(json => {
             console.log(requestedHour)
             const query = `
-              INSERT INTO data_for_ml_from_open_meteo (time, temperature_2m, relativehumidity_2m, dewpoint_2m, apparent_temperature,
+              INSERT INTO hibiny_open_meteo (time, temperature_2m, relativehumidity_2m, dewpoint_2m, apparent_temperature,
               precipitation, rain_and_showers, snowfall, pressure_msl, surface_pressure,
               cloudcover, cloudcover_low, cloudcover_mid, cloudcover_high, et0_fao_evapotranspiration,
               vapor_pressure_deficit, windspeed_10m, windspeed_80m,
